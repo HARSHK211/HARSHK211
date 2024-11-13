@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Photo Gallery</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff; /* Light background for default color scheme */
+      color: #333; /* Default font color */
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+      padding: 20px;
+    }
+
+    figure {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    figcaption {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Mobile View (default - mobile-first) */
+    @media (min-width: 772px) {
+      /* Tablet view */
+      .container {
+        grid-template-columns: 1fr 1fr;  /* Two columns for tablet view */
+      }
+
+      figure {
+        border-radius: 50%;  /* Circular border for images */
+      }
+
+      figure:last-child {
+        grid-column: span 2;  /* Last figure takes both columns */
+      }
+    }
+
+    @media (min-width: 992px) {
+      /* Large screen view */
+      .container {
+        grid-template-columns: 1fr 1fr;  /* Two columns for larger screens */
+      }
+
+      figure {
+        border-radius: 0;  /* Remove border-radius for large screens */
+      }
+
+      figure:nth-child(3n) {
+        grid-column: span 2;  /* Every third figure spans both columns */
+      }
+    }
+
+    /* Prefers Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;  /* Remove smooth scrolling */
+      }
+    }
+
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #333;  /* Dark background for dark mode */
+        color: #f0e68c;  /* Lighter font color (yellow-ish) */
+      }
+
+      figure {
+        background-color: #222;  /* Dark background for figures */
+        color: #f0e68c;  /* Light yellow text */
+        border: 1px solid black;  /* Black border */
+      }
+    }
+
+    /* Accessibility: Ensure sufficient contrast for readability */
+    figure img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Photo Gallery Section -->
+  <section class="container">
+    <figure>
+      <img src="image1.jpg" alt="A beautiful sunrise over the mountains">
+      <figcaption>Sunrise over the mountains</figcaption>
+    </figure>
+    <figure>
+      <img src="image2.jpg" alt="A calm beach with clear blue water">
+      <figcaption>Calm beach with clear blue water</figcaption>
+    </figure>
+    <figure>
+      <img src="image3.jpg" alt="City skyline during sunset">
+      <figcaption>City skyline during sunset</figcaption>
+    </figure>
+    <figure>
+      <img src="image4.jpg" alt="Forest path covered in autumn leaves">
+      <figcaption>Forest path during autumn</figcaption>
+    </figure>
+    <figure>
+      <img src="image5.jpg" alt="Snow-covered mountain peak">
+      <figcaption>Snow-covered mountain peak</figcaption>
+    </figure>
+    <figure>
+      <img src="image6.jpg" alt="Clear starry sky over the desert">
+      <figcaption>Starry sky over the desert</figcaption>
+    </figure>
+  </section>
+
+</body>
+</html>
