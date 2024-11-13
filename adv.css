@@ -1,0 +1,35 @@
+/* Base styling for Mobile View (default) */
+div {
+  width: 100%;
+  /* Add any other base styles for mobile here */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* Any other default styling for images here */
+}
+
+/* Media Query #1: Tablet View (triggered at 772px) */
+@media (min-width: 772px) {
+  div {
+    width: 45%; /* Divs occupy 45% of the viewport width */
+    display: inline-block; /* Aligns divs horizontally */
+    vertical-align: top; /* Ensures alignment */
+  }
+
+  img {
+    max-height: 30vh; /* Images occupy up to 30% of viewport height */
+    width: auto; /* Adjusts image width automatically to maintain aspect ratio */
+  }
+}
+
+/* Media Query #2: Large Screen View (triggered at 998px) */
+@media (min-width: 998px) {
+  div {
+    width: 30%; /* Divs occupy 30% of the viewport width */
+    /* Additional layout styling for large screens can be added here */
+  }
+
+  /* Image settings will inherit from previous styling or can be overridden here if needed */
+}
